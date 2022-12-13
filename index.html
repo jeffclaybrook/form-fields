@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Form fields style guide">
+    <meta name="apple-mobile-web-app-status-bar-style" content="Canvas">
+    <meta name="theme-color" content="Canvas">
+    <meta name="description" content="Form field style guide">
+    <title>Forms</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form autocomplete="off">
+        <fieldset>
+            <legend>Text fields</legend>
+            <div class="form-control">
+                <input type="text" id="name" name="foo-name-field" placeholder="Name" aria-describedby="foo-name-validation" aria-labelledby="foo-name-label" autocomplete="foo-name-field" inputmode="text" required>
+                <label for="name" id="foo-name-label">Name</label>
+                <span class="helper-text" id="foo-name-validation" aria-hidden="true" aria-live="assertive" role="alert">Please enter a valid name</span>
+            </div>
+            <div class="form-control">
+                <input type="email" id="email" name="foo-email-field" placeholder="Email" aria-describedby="foo-email-validation" aria-labelledby="foo-email-label" autocomplete="foo-email-field" inputmode="email" required>
+                <label for="email" id="foo-email-label">Email</label>
+                <span class="helper-text" id="foo-email-validation" aria-hidden="true" aria-live="assertive" role="alert">Please enter a valid email address</span>
+            </div>
+            <div class="form-control">
+                <input type="tel" id="tel" name="foo-tel-field" placeholder="Phone" aria-describedby="foo-tel-validation" aria-labelledby="foo-tel-label" autocomplete="foo-tel-field" inputmode="tel" required>
+                <label for="tel" id="foo-tel-label">Phone</label>
+                <span class="helper-text" id="foo-tel-validation" aria-hidden="true" aria-live="assertive" role="alert">Please enter a valid telephone number</span>
+            </div>
+            <div class="form-control">
+                <input type="url" id="url" name="foo-url-field" placeholder="URL" aria-describedby="foo-url-validation" aria-labelledby="foo-url-label" autocomplete="foo-url-field" inputmode="url" required>
+                <label for="url" id="foo-url-label">URL</label>
+                <span class="helper-text" id="foo-url-validation" aria-hidden="true" aria-live="assertive" role="alert">Please enter a valid URL</span>
+            </div>
+            <div class="form-control">
+                <input type="password" id="password" name="foo-password-field" placeholder="Password" aria-describedby="foo-password-validation" aria-labelledby="foo-password-label" autocomplete="foo-password-field" inputmode="text" required>
+                <label for="password" id="foo-password-label">Password</label>
+                <span class="helper-text" id="foo-password-validation" aria-hidden="true" aria-live="assertive" role="alert">Password incorrect</span>
+                <i class="material-symbols-rounded" id="toggle-password" onclick="togglePassword()">visibility_off</i>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Textarea</legend>
+            <div class="textarea-control">
+                <textarea id="description" name="description" placeholder="Description" maxlength="1000" oninput="countCharacters()"></textarea>
+                <label for="description">Description</label>
+                <span class="character-counter" id="description-character-counter">0 / 1000</span>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Selects</legend>
+            <div class="select-control" id="select-control">
+                <div class="select" id="select" onclick="toggleSelect()">
+                    <label>Select</label>
+                    <i class="material-symbols-rounded">arrow_drop_down</i>
+                </div>
+                <div class="select-dropdown" id="select-dropdown">
+                    <ul class="select-items" id="select-items"></ul>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Checkboxes</legend>
+            <div class="checkbox-control">
+                <input type="checkbox" id="checkbox-1" name="checkbox-1">
+                <label for="checkbox-1">Checkbox 1</label>
+            </div>
+            <div class="checkbox-control">
+                <input type="checkbox" id="checkbox-2" name="checkbox-2">
+                <label for="checkbox-2">Checkbox 2</label>
+            </div>
+            <div class="checkbox-control">
+                <input type="checkbox" id="checkbox-3" name="checkbox-3">
+                <label for="checkbox-3">Checkbox 3</label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Radios</legend>
+            <div class="radio-control">
+                <input type="radio" id="radio-1" name="radios">
+                <label for="radio-1">Radio 1</label>
+            </div>
+            <div class="radio-control">
+                <input type="radio" id="radio-2" name="radios">
+                <label for="radio-2">Radio 2</label>
+            </div>
+            <div class="radio-control">
+                <input type="radio" id="radio-3" name="radios">
+                <label for="radio-3">Radio 3</label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Switches</legend>
+            <div class="switch-control">
+                <input type="checkbox" id="switch-1" name="switch-1">
+                <label for="switch-1">Switch 1</label>
+            </div>
+            <div class="switch-control">
+                <input type="checkbox" id="switch-2" name="switch-2">
+                <label for="switch-2">Switch 2</label>
+            </div>
+            <div class="switch-control">
+                <input type="checkbox" id="switch-3" name="switch-3">
+                <label for="switch-3">Switch 3</label>
+            </div>
+        </fieldset>
+        <button class="text-btn" type="button">Submit</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
