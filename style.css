@@ -210,6 +210,7 @@ legend {
    border: 1.5px solid #ccc;
    outline: none;
    transition: .15s;
+   font-size: 1rem;
    resize: none;
    position: absolute;
    top: 0;
